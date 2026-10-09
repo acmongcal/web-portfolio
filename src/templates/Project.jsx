@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react'
 import Loading from '../utilities/Loading'
-import {restBase} from '../utilities/Utilities'
+import { restBase } from '../utilities/Utilities'
 
-const Page = ( {pageID}  ) => {
-    const restPath = restBase + `pages/${pageID}`
+const Project = () => {
+    const restPath = restBase + 'pages/8'
     const [restData, setData] = useState([])
     const [isLoaded, setLoadStatus] = useState(false)
 
@@ -20,7 +20,7 @@ const Page = ( {pageID}  ) => {
         }
         fetchData()
     }, [restPath])
-
+    
     return (
         <>
         { isLoaded ?
@@ -33,10 +33,10 @@ const Page = ( {pageID}  ) => {
                 </article>
             </>
         : 
-            <Loading />
+            <Loading /> 
         }
-        </>
+        </>            
     )
 }
 
-export default Page
+export default Project

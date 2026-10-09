@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
 import Loading from '../utilities/Loading'
 import { restBase } from '../utilities/Utilities'
 
-const Jobs = () => {
-    const restPath = restBase + 'fwd-job-posting?_embed=1'
+const Projects = () => {
+    const restPath = restBase + 'pages/8'
     const [restData, setData] = useState([])
     const [isLoaded, setLoadStatus] = useState(false)
+
     useEffect(() => {
         const fetchData = async () => {
             const response = await fetch(restPath)
@@ -20,24 +20,23 @@ const Jobs = () => {
         }
         fetchData()
     }, [restPath])
-   
+    
     return (
         <>
         { isLoaded ?
             <>
-                <title>Careers | Mindset Headless</title>
-                <h1>Careers</h1>
-                {restData.map(job => 
-                    <article key={job.id} id={`job-${job.id}`}>
-                        <Link to={`/careers/${job.slug}`}><h2>{job.title.rendered}</h2></Link>
-                    </article>
-                )}
+                <title>{`${restData.title.rendered} | Mindset Headless`}</title>
+                <article id={`post-${restData.id}`}>
+                    <h1>{restData.title.rendered}</h1>
+                    <div className="entry-content" dangerouslySetInnerHTML={{__html:restData.content.rendered}}>
+                    </div>
+                </article>
             </>
         : 
-            <Loading />
+            <Loading /> 
         }
-        </>
+        </>            
     )
 }
 
-export default Jobs
+export default Projects
