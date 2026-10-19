@@ -1,10 +1,10 @@
 import { Route, Routes, Link, NavLink } from 'react-router-dom'
 import ScrollToTop from './utilities/ScrollToTop'
-import Home from './templates/Home'
-import Projects from './templates/Projects'
-import Experiences from './templates/Experiences'
-import About from './templates/About'
-import Project from './templates/Project'
+import Home from './pages/Home'
+import Projects from './pages/Projects'
+import Experiences from './pages/Experiences'
+import About from './pages/About'
+import Project from './pages/Project'
 
 function App() {
 
