@@ -1,10 +1,10 @@
 import { Route, Routes, Link, NavLink } from 'react-router-dom'
 import ScrollToTop from './utilities/ScrollToTop'
-import Home from './pages/Home'
-import Projects from './pages/Projects'
-import Experiences from './pages/Experiences'
-import About from './pages/About'
-import Project from './pages/Project'
+import PageHome from './pages/PageHome'
+import PageProjects from './pages/PageProjects'
+import PageExperiences from './pages/PageExperiences'
+import PageAbout from './pages/PageAbout'
+import PageProject from './pages/PageProject'
 
 function App() {
 
@@ -27,11 +27,11 @@ function App() {
       </header>
       <main id="main">
         <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/projects' element={<Projects />} />
-          <Route path='/projects/:slug' element={<Project />} />
-          <Route path='/experiences' element={<Experiences />} />
-          <Route path='/about' element={<About />} />
+          <Route path='/' element={<PageHome />} />
+          <Route path='/projects' element={<PageProjects />} />
+          <Route path='/projects/:slug' element={<PageProject />} />
+          <Route path='/experiences' element={<PageExperiences />} />
+          <Route path='/about' element={<PageAbout />} />
         </Routes>
       </main>
       <footer>

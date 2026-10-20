@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import Loading from '../utilities/Loading'
 import { restBase } from '../utilities/Utilities'
 
-const About = () => {
+function PageProjects() {
     const restPath = restBase + 'pages/8'
     const [restData, setData] = useState([])
     const [isLoaded, setLoadStatus] = useState(false)
@@ -39,4 +39,4 @@ const About = () => {
     )
 }
 
-export default About
+export default PageProjects

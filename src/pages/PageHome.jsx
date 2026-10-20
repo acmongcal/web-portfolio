@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import Loading from '../utilities/Loading'
 import { restBase } from '../utilities/Utilities'
 
-const Project = () => {
+function PageHome() {
     const restPath = restBase + 'pages/8'
     const [restData, setData] = useState([])
     const [isLoaded, setLoadStatus] = useState(false)
@@ -33,10 +33,16 @@ const Project = () => {
                 </article>
             </>
         : 
-            <Loading /> 
+            
+            // <Loading /> 
+            <div>
+                <button class="button-49" role="button">Button 49</button>
+                <p></p>
+                <button class="button-53" role="button">Button 53</button>
+            </div>
         }
         </>            
     )
 }
 
-export default Project
+export default PageHome
