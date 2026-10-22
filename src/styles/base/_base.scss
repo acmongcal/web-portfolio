@@ -1,0 +1,40 @@
+
+
+
+a {
+    text-decoration: none;
+}
+
+
+ul{
+    list-style: none;
+}
+
+
+
+ul li a,
+ul li a:visited { 
+	color: black;
+	text-decoration: none;
+}
+
+
+.featured-image img{
+    height: 25rem;
+    width: 40rem;
+}
+
+.techstack-logo img, .logo{
+    height: 3rem;
+    width: 3rem;
+}
+
+
+// ul li a:hover,
+// ul li a:focus,
+// ul li a:active {
+// 	border: outset #fd336d 0.4rem;
+//     background-color: #000100;
+//     padding: 0.4rem;
+//     border-radius: 1rem;
+// }

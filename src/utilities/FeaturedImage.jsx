@@ -1,14 +1,14 @@
 // Description: FeaturedImage component to display the featured image of a post or page.
 // featuredImageObject: The featured image object from the REST API.
 
-const FeaturedImage = ( {featuredImageObject} ) => {
+function FeaturedImage ( {featuredImageObject, className} ) {
 
     let imgWidth = featuredImageObject.media_details.sizes.full.width;
     let imgHeight = featuredImageObject.media_details.sizes.full.height;
     let imgURL = featuredImageObject.source_url;
     
     return (
-        <figure className="featured-image">
+        <figure className={className?className:"featured-image"}>
             <img 
                 src={imgURL} 
                 width={imgWidth}

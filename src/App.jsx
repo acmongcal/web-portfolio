@@ -31,14 +31,7 @@ function App() {
           </Routes>
         </main>
         <footer>
-          <nav className="site-navigation">
-            <ul>
-              <li><Link to='/'>Home</Link></li>
-              <li><NavLink to='/about'>About</NavLink></li>
-              <li><NavLink to='/projects'>Projects</NavLink></li>
-              <li><NavLink to='/experiences'>Experiences</NavLink></li>
-            </ul>
-          </nav>
+          &copy; Kuuhaku Dev {new Date().getFullYear()}. 
         </footer>
       </LoadingProvider>
     </>

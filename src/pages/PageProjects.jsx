@@ -1,11 +1,11 @@
-import { useState, useEffect } from 'react'
-import { restBase } from '../utilities/Utilities'
+import { useState, useEffect } from "react";
+import { restBase } from "../utilities/Utilities";
 function PageProjects() {
+  return (
+    <>
 
-    
-    return (
-        <></>
-    )
+    </>
+  );
 }
 
-export default PageProjects
+export default PageProjects;

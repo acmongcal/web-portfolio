@@ -5,6 +5,7 @@ import Skills from "../components/Skills";
 function PageExperiences() {
   return (
     <>
+      <h1>Experiences</h1>
       <Education />
       <Skills />
       <WorkHistory />

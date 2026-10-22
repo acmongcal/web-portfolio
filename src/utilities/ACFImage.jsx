@@ -2,7 +2,7 @@
 // acfImageObject (Required): The ACF image array from the REST API.
 // acfImageSize (Optional): Add if you want a specific size. For example: 'medium', 'medium_large', 'large'.
 
-const ACFImage = ({ acfImageObject, acfImageSize }) => {
+function ACFImage({ acfImageObject, acfImageSize }) {
 
     let imgWidth = acfImageObject.width;
     let imgHeight = acfImageObject.height;
