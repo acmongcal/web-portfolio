@@ -24,3 +24,11 @@ export function decodeHtml(html) {
     return txt.value;
 }
 
+
+export function randomIntScale(min,max) // min and max included
+{
+    return Math.floor(Math.random()*(max-min+1)+min);
+}
+export function between(x, min, max) {
+  return x >= min && x <= max;
+}

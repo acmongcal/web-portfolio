@@ -1,0 +1,62 @@
+
+.loading-bg {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(
+    45deg,
+    rgb(0, 2, 14) 0%,
+    rgb(11, 69, 192) 50%,
+    rgb(38, 128, 251) 100%
+  );
+  position: fixed;
+  z-index: 1000;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+}
+
+.circle-line {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  right: auto;
+
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  border: 1px solid #fff;
+
+  transform: translate(-50%, -50%) rotate(0deg);
+
+  animation-duration: 5s;
+  animation-name: rotate_line;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.circle-line.line2 {
+  width: 400px;
+  height: 400px;
+  animation-delay: 1s;
+  border-top-color: transparent;
+}
+
+.circle-line.line3 {
+  width: 450px;
+  height: 450px;
+  animation-delay: 3s;
+  border-bottom-color: transparent;
+  animation-duration: 50s;
+}
+
+@keyframes rotate_line {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}

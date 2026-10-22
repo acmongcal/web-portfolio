@@ -1,27 +1,29 @@
-import { useState, useEffect } from 'react'
-import Loading from '../utilities/Loading'
+import { useState, useEffect, useContext } from 'react'
 import { restBase } from '../utilities/Utilities'
 import { formatDate } from '../utilities/functions'
-
+import { LoadingContext } from '../context/LoadingContext'
 
 function WorkHistory(){
     const restPath = restBase + 'work-experience?_embed=1'
     const [restData, setData] = useState([])
     const [isLoaded, setLoadStatus] = useState(false)
+    const { runWithLoading } = useContext(LoadingContext);
 
     useEffect(() => {
         const fetchData = async () => {
-            const response = await fetch(restPath)
-            if ( response.ok ) {
-                const data = await response.json()
-                setData(data)
-                setLoadStatus(true)
-            } else {
-                setLoadStatus(false)
-            }
+            await runWithLoading(async () => {
+                const response = await fetch(restPath)
+                if ( response.ok ) {
+                    const data = await response.json()
+                    setData(data)
+                    setLoadStatus(true)
+                } else {
+                    setLoadStatus(false)
+                }
+            })
         }
         fetchData()
-    }, [restPath])
+    }, [restPath, runWithLoading])
     return (
         <section>
             
@@ -57,8 +59,8 @@ function WorkHistory(){
                     )}
                     
                 </>
-                : 
-                <Loading /> 
+                :
+                null
             }
         </section>            
     )

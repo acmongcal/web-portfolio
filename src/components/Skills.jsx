@@ -1,34 +1,37 @@
-import { useState, useEffect } from "react";
-import Loading from "../utilities/Loading";
+import { useState, useEffect, useContext } from "react";
 import { restBase } from "../utilities/Utilities";
 import { decodeHtml } from "../utilities/functions";
+import { LoadingContext } from "../context/LoadingContext";
 function Skills() {
   const restPath = restBase + "skill-type?_embed=1";
   const [restData, setData] = useState([]);
   const [isLoaded, setLoadStatus] = useState(false);
+  const { runWithLoading } = useContext(LoadingContext);
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch(restPath);
-      if (response.ok) {
-        const data = await response.json();
-        setData(data);
-        setLoadStatus(true);
-      } else {
-        setLoadStatus(false);
-      }
+      await runWithLoading(async () => {
+        const response = await fetch(restPath);
+        if (response.ok) {
+          const data = await response.json();
+          setData(data);
+          setLoadStatus(true);
+        } else {
+          setLoadStatus(false);
+        }
+      });
     };
     fetchData();
-  }, [restPath]);
+  }, [restPath, runWithLoading]);
   return (
     <section>
       {isLoaded ? (
         <>
           <h2>Skills</h2>
           {restData ? (
-            restData.map((skillType, index) => (
-              <article>
-                <h3 key={index} id={`skill-${skillType.id}`}>
+            restData.map((skillType) => (
+              <article key={skillType.id}>
+                <h3 id={`skill-${skillType.id}`}>
                   {decodeHtml(skillType.title.rendered)}
                 </h3>
                 <ul>
@@ -43,9 +46,7 @@ function Skills() {
             <p>No skills found</p>
           )}
         </>
-      ) : (
-        <Loading />
-      )}
+      ) : null}
     </section>
   );
 }
