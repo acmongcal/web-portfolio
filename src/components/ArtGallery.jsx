@@ -30,8 +30,6 @@ function ArtGallery(){
         <section>
             { isLoaded ?
                 <>
-                  
-                    <h2>Art Works</h2>
                     {restData?(
                         restData.map((art,index)=>(
                             <article key={index} id={`art-${art.id}`}>
