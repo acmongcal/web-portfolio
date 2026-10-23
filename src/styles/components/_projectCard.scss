@@ -1,0 +1,25 @@
+.logo{
+    height: 3rem;
+    width: 3rem;
+}
+
+
+
+.project-techstack{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.project-links{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.project-card{
+    display: flex;
+    width: 20rem;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}

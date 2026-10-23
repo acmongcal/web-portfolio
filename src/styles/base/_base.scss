@@ -24,11 +24,16 @@ ul li a:visited {
     width: 40rem;
 }
 
-.techstack-logo img, .logo{
+.techstack-logo img{
     height: 3rem;
     width: 3rem;
 }
 
+
+.home-techstack{
+    display: flex;
+    flex-wrap: wrap;
+}
 
 // ul li a:hover,
 // ul li a:focus,
@@ -38,3 +43,8 @@ ul li a:visited {
 //     padding: 0.4rem;
 //     border-radius: 1rem;
 // }
+
+.active-btn{
+    background: gray;
+    color: white;
+}

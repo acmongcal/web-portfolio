@@ -25,7 +25,7 @@ function App() {
           <Routes>
             <Route path='/' element={<PageHome />} />
             <Route path='/projects' element={<PageProjects />} />
-            <Route path='/projects/:slug' element={<PageProject />} />
+            <Route path='/project-details/:id' element={<PageProject />} />
             <Route path='/experiences' element={<PageExperiences />} />
             <Route path='/about' element={<PageAbout />} />
           </Routes>

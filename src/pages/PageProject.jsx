@@ -1,44 +1,96 @@
-import { useState, useEffect, useContext } from 'react'
-import { restBase } from '../utilities/Utilities'
-import { LoadingContext } from '../context/LoadingContext'
-function PageProject() {
-    const restPath = restBase + 'pages/8'
-    const [restData, setData] = useState([])
-    const [isLoaded, setLoadStatus] = useState(false)
-    const { runWithLoading } = useContext(LoadingContext)
+import { useState, useEffect, useContext } from "react";
+import { useParams } from "react-router-dom";
+import { restBase } from "../utilities/Utilities";
+import { LoadingContext } from "../context/LoadingContext";
+import { decodeHtml } from "../utilities/functions";
+import FeaturedImage from "../utilities/FeaturedImage";
 
-    useEffect(() => {
-        const fetchData = async () => {
-            await runWithLoading(async () => {
-                const response = await fetch(restPath)
-                if ( response.ok ) {
-                    const data = await response.json()
-                    setData(data)
-                    setLoadStatus(true)
-                } else {
-                    setLoadStatus(false)
-                }
-            })
+function PageProject() {
+  const { id } = useParams();
+  const restPath = restBase + `project/${id}?_embed=1`;
+  const [restData, setData] = useState([]);
+  const [isLoaded, setLoadStatus] = useState(false);
+  const { runWithLoading } = useContext(LoadingContext);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      await runWithLoading(async () => {
+        const response = await fetch(restPath);
+        if (response.ok) {
+          const data = await response.json();
+          setData(data);
+          setLoadStatus(true);
+        } else {
+          setLoadStatus(false);
         }
-        fetchData()
-    }, [restPath, runWithLoading])
-    
-    return (
+      });
+    };
+    fetchData();
+  }, [restPath, runWithLoading]);
+
+  return (
+    <section>
+      {isLoaded ? (
         <>
-        { isLoaded ?
+          {restData ? (
             <>
-                <title>{`${restData.title.rendered} | Mindset Headless`}</title>
-                <article id={`post-${restData.id}`}>
-                    <h1>{restData.title.rendered}</h1>
-                    <div className="entry-content" dangerouslySetInnerHTML={{__html:restData.content.rendered}}>
-                    </div>
-                </article>
+              <h1>{decodeHtml(restData.title.rendered)}</h1>
+              <FeaturedImage
+                featuredImageObject={restData._embedded["wp:featuredmedia"][0]}
+              />
+              <ul className="project-techstack">
+                {restData._embedded["acf:post"].map((techstack, index) => (
+                  <li key={index}>
+                    <img
+                      className="logo"
+                      src={techstack.featured_image_url}
+                      alt={techstack.title.rendered + " Logo"}
+                    />
+                  </li>
+                ))}
+              </ul>
+              <p>{restData.acf.project_overview}</p>
+              <h2>Take Away</h2>
+              <h3>Lessons Learned</h3>
+              <ul>
+                {restData.acf.lessons_learned.map((lesson, index) => (
+                  <li key={index}>
+                    {lesson.lesson}
+                  </li>
+                ))}
+              </ul>
+              <h3>Reflection</h3>
+              <p>{restData.acf.reflection}</p>
+              {restData.acf.collaborators ? (
+                <h2>Features I Worked On</h2>
+              ) : (
+                <h2>Key Features</h2>
+              )}
+              <ul>
+                {restData.acf.key_features.map((feature, index) => (
+                  <li key={index}>
+                    <h3>{feature.feature}</h3>
+                    <p>{feature.feature_overview}</p>
+                  </li>
+                ))}
+              </ul>
+              <div className="project-links">
+                <a href={restData.acf.live_site_link} className="button-49">
+                  livesite
+                </a>
+                <a href={restData.acf.github_link} className="button-49">
+                  repo
+                </a>
+              </div>
             </>
-        :
-            null
-        }
-        </>            
-    )
+          ) : (
+            //Fallback if rest api failed to load
+            <p>Project not found</p>
+          )}
+        </>
+      ) : null}
+    </section>
+  );
 }
 
-export default PageProject
+export default PageProject;

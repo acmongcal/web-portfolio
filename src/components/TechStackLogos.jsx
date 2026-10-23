@@ -26,7 +26,7 @@ function TechStackLogos({ embed }) {
   }, [restPath, runWithLoading]);
 
   return (
-    <section>
+    <section className="home-techstack">
       {isLoaded ? (
         <>
           {restData

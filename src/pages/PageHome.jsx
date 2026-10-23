@@ -1,6 +1,4 @@
-import { useState, useEffect } from "react";
-import { restBase } from "../utilities/Utilities";
-import FeaturedProjects from "../components/FeaturedProjects";
+import Projects from "../components/Projects";
 import TechStackLogos from "../components/TechStackLogos";
 function PageHome() {
   return (
@@ -11,7 +9,7 @@ function PageHome() {
         <a href="/experiences" className="button-49">Background</a>
         <a href="/about" className="button-53">My Story</a>
         <TechStackLogos/>
-        <FeaturedProjects/>
+        <Projects limit={3}/>
     </>
   );
 }
