@@ -24,29 +24,33 @@ function Skills() {
     fetchData();
   }, [restPath, runWithLoading]);
   return (
-    <section>
-      {isLoaded ? (
-        <>
-          <h2>Skills</h2>
-          {restData ? (
-            restData.map((skillType) => (
-              <article key={skillType.id}>
-                <h3 id={`skill-${skillType.id}`}>
-                  {decodeHtml(skillType.title.rendered)}
-                </h3>
-                <ul>
-                  {skillType.acf.skills.map((skill, index) => (
-                    <li key={index}>{skill.skill}</li>
-                  ))}
-                </ul>
-              </article>
-            ))
-          ) : (
-            //Fallback if rest api failed to load
-            <p>No skills found</p>
-          )}
-        </>
-      ) : null}
+    <section className="window">
+      <div className="titlebar">
+        <h2>Skills</h2>
+      </div>
+      <div className="content">
+        {isLoaded ? (
+          <>
+            {restData ? (
+              restData.map((skillType) => (
+                <article key={skillType.id}>
+                  <h3 id={`skill-${skillType.id}`}>
+                    {decodeHtml(skillType.title.rendered)}
+                  </h3>
+                  <ul>
+                    {skillType.acf.skills.map((skill, index) => (
+                      <li key={index}>{skill.skill}</li>
+                    ))}
+                  </ul>
+                </article>
+              ))
+            ) : (
+              //Fallback if rest api failed to load
+              <p>No skills found</p>
+            )}
+          </>
+        ) : null}
+      </div>
     </section>
   );
 }

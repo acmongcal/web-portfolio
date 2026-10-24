@@ -2,8 +2,8 @@ import ArtGallery from "../components/ArtGallery";
 
 function PageAbout() {
   return (
-    <>
-      <section>
+    <div className="about-section">
+      <section >
         <h1 className="page-header">My Story</h1>
         <p>
           I'm a junior web developer from Computer Science and with 6 years
@@ -119,7 +119,7 @@ function PageAbout() {
         
         <p>Insert gallery</p>
       </section>
-    </>
+    </div>
   );
 }
 

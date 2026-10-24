@@ -8,10 +8,12 @@
 @use './components/loader';
 @use './components/projectCard';
 @use './components/education';
+@use './components/skills';
 
 
 //Pages
 @use './pages/projects';
 @use './pages/experiences';
 @use './pages/project';
+@use './pages/about';
 

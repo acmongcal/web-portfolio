@@ -29,6 +29,7 @@ function Education() {
       <div className="titlebar">
         <h2>Education Background</h2>
       </div>
+      <div className="content">
       {isLoaded ? (
         <div className="education-timeline">
           {restData.length > 0 ? (
@@ -73,6 +74,7 @@ function Education() {
           )}
         </div>
       ) : null}
+      </div>
     </section>
   );
 }
