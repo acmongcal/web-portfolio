@@ -26,7 +26,7 @@ function TechStackLogos({ embed }) {
   }, [restPath, runWithLoading]);
 
   return (
-    <section className="home-techstack">
+    <article className="home-techstack">
       {isLoaded ? (
         <>
           {restData
@@ -44,7 +44,7 @@ function TechStackLogos({ embed }) {
               null}
         </>
       ) : null}
-    </section>
+    </article>
   );
 }
 

@@ -4,22 +4,94 @@
 }
 
 
-
-.project-techstack{
-    display: flex;
-    flex-wrap: wrap;
-}
-
 .project-links{
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
+    margin: 1rem auto;
 }
 
-.project-card{
-    display: flex;
-    width: 20rem;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-items: center;
+
+
+//Reference from https://uiverse.io/MuhammadHasann/calm-sloth-44
+.project-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem;
+  width: 30rem;
+  height: auto;
+  background-color: #240115 ;
+  margin-bottom: 2rem;
+  box-shadow:0 0 5px #fd336d;
+}
+
+.project-card:hover{
+  background-color: #000100;
+}
+
+.project-card .rectangle {
+  position: absolute;
+  width: 0.925rem;
+  aspect-ratio: 1 / 1;
+  background-color: #fd336d;
+
+  opacity: 0;
+  box-shadow: 0rem 0rem 0rem 0.175rem #000100;
+}
+.project-card:hover .rectangle {
+  opacity: 1;
+}
+
+.project-card .rectangle.left-top {
+  top: -0.25rem;
+  left: -0.25rem;
+}
+.project-card .rectangle.right-top {
+  top: -0.25rem;
+  right: -0.25rem;
+}
+.project-card .rectangle.left-bottom {
+  bottom: -0.25rem;
+  left: -0.25rem;
+}
+.project-card .rectangle.right-bottom {
+  bottom: -0.25rem;
+  right: -0.25rem;
+}
+
+.project-card .featured-image {
+    margin: 0 auto;
+
+}
+
+
+.project-card .title {
+  font-size: 1.5rem;
+  color: #94C5CC;
+  font-weight: bold;
+}
+
+
+.category {
+  margin: 0;
+  padding: 0;
+  padding-left: 0.5rem;
+  position: relative;
+  top: -4.05rem;
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+
+.project-card .button-53{
+  width: fit-content;
+}
+
+.project-card .button-53:hover{
+  width: fit-content;
+  background: #fd336d;
+  color: #94C5CC;
 }

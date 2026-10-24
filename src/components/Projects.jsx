@@ -48,7 +48,6 @@ function Projects({ limit, filter }) {
             </>
           ) : (
             <>
-              <h1>Projects</h1>
               {restData ? (
                 restData.map((project) => {
                   const terms = project._embedded?.["wp:term"] ?? [];

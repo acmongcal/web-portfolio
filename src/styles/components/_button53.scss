@@ -18,7 +18,7 @@
   max-width: 460px;
   position: relative;
   cursor: pointer;
-  transform: rotate(-2deg);
+  // transform: rotate(-2deg);
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
@@ -31,7 +31,7 @@
 .button-53:after {
   content: '';
   position: absolute;
-  border: 1px solid #000000;
+  border: 1px solid #fd336d;
   bottom: 4px;
   left: 4px;
   width: calc(100% - 1px);
@@ -39,6 +39,7 @@
 }
 
 .button-53:hover:after {
+  border: 1px solid #94C5CC;
   bottom: 2px;
   left: 2px;
 }

@@ -4,12 +4,12 @@
   height: 100vh;
   margin: 0;
   padding: 0;
-  background: linear-gradient(
-    45deg,
-    rgb(0, 2, 14) 0%,
-    rgb(11, 69, 192) 50%,
-    rgb(38, 128, 251) 100%
-  );
+  background: radial-gradient( 
+    circle farthest-corner at 50% 52.5%, 
+     #240115 0%, 
+     #000100 90% );
+
+
   position: fixed;
   overflow: hidden;
   top: 0;
@@ -25,8 +25,8 @@
   border-radius: 50%;
   width: 100px;
   height: 100px;
-  border: 1px solid #fff;
-
+  border: 1.5px solid #94C5CC;
+  box-shadow:0 0 2px #fd336d;
   transform: translate(-50%, -50%) rotate(0deg);
 
   animation-duration: 5s;

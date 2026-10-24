@@ -4,7 +4,7 @@ function PageAbout() {
   return (
     <>
       <section>
-        <h1>My Story</h1>
+        <h1 className="page-header">My Story</h1>
         <p>
           I'm a junior web developer from Computer Science and with 6 years
           experience of QA testing for both hardware and software.
@@ -41,6 +41,7 @@ function PageAbout() {
             completed are Hollow Knight, Hollow Knight: Silksong and Echoes of
             Aincrad.
           </p>
+          <a href="https://steamcommunity.com/id/kuuhaku13/">Steam Profile</a>
         </article>
         <article>
           <h3>Watching Shows</h3>
@@ -79,9 +80,9 @@ function PageAbout() {
             I listen to a lot of music genres such as kpop, jrock, anisongs,
             vtuber music, rock and pop songs. Some of the artists/bands that are
             like are IU, Twice, One ok Rock, Eve, Arekun, Shawn Mendes, Green
-            Day and BoyWithUke. You can check more of the songs that I liked in
-            my spotify profile below.
+            Day, MindaRyn and BoyWithUke.
           </p>
+          <a href="https://open.spotify.com/user/22u3dspdoaewguhwr4rtr3kei?si=ab9165c68cab4be5">Spotify Profile</a>
         </article>
         <article>
           <h3>Playing Guitar</h3>

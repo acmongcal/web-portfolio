@@ -1,5 +1,12 @@
 
-
+body{
+    margin: 0;
+    background: radial-gradient( 
+    circle farthest-corner at 50% 52.5%, 
+    #000100 0%, 
+    #240115 90% );
+    color: #94C5CC;
+}
 
 a {
     text-decoration: none;
@@ -10,18 +17,10 @@ ul{
     list-style: none;
 }
 
-
-
-ul li a,
-ul li a:visited { 
-	color: black;
-	text-decoration: none;
-}
-
-
 .featured-image img{
-    height: 25rem;
-    width: 40rem;
+    height: 15rem;
+    width: 30rem;
+    object-fit: fill;
 }
 
 .techstack-logo img{
@@ -29,7 +28,10 @@ ul li a:visited {
     width: 3rem;
 }
 
-
+.profile{
+    width: 20rem;
+    height: 20rem;
+}
 .home-techstack{
     display: flex;
     flex-wrap: wrap;
@@ -43,8 +45,169 @@ ul li a:visited {
 //     padding: 0.4rem;
 //     border-radius: 1rem;
 // }
+.page-header{
+  width: fit-content;
+  padding: 11px 33px;
+  font-size: 25px;
+  color: #94C5CC;
+  background: #000100;
+  box-shadow: 6px 6px 0 #fd336d;
+  transform: skewX(-15deg);
+  margin-top: 2rem;
+  margin-bottom: 5rem;
+}
 
-.active-btn{
-    background: gray;
-    color: white;
+.site-navigation{
+    background-color: #000100;
+    height: 4rem;
+}
+.site-navigation ul{
+    margin: 0;
+    padding: 1.5rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-around;
+}
+
+.site-navigation ul li a,
+.site-navigation ul li a:visited{
+    color: #94C5CC;
+    text-decoration: none;
+}
+
+
+.site-navigation ul li a:hover{
+    color: #fd336d;
+}
+
+
+footer{
+    text-align: center;
+    color: #94C5CC;
+    background-color:#000100;
+    height: 5rem;
+    padding: 3rem 0;
+
+}
+footer p{
+    margin: 0;
+}
+.contact-footer{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.home-container{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    justify-items: center;
+    padding: 3rem 5rem;
+    
+}
+
+
+.home-socials{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    position: relative;
+    top: -2.5rem;
+}
+
+.home-socials img{
+    width: 2rem;
+}
+
+.home-profile{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    align-items: center;
+    gap: 2rem;
+    row-gap: 1px;
+}
+
+.home-profile .profile{
+    grid-column: 2;
+    grid-row: 1 / span 3;
+    box-shadow: 20px -16px #94C5CC;
+}
+
+.home-profile h2{
+    grid-column: 1;
+    grid-row: 1;
+    margin: 0;
+}
+
+.home-profile .home-socials{
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.home-profile p{
+    grid-column: 1;
+    grid-row: 3;
+    margin: 0;
+}
+
+.home-ctas{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 7rem;
+    grid-column: 1 / span 2;
+    padding: 2rem 0;
+}
+.home-ctas .button-53{
+    width: 100%;
+    padding: 1.5rem;
+}
+
+.home-ctas .button-53:hover{
+    color: #94C5CC;
+    background-color: #000100;
+}
+.home-ctas .button-49, .home-ctas .button-49:after{
+    width: 100%;
+}
+
+//Reference: https://uiverse.io/vaibhavchandranv/swift-ladybug-51
+/* From Uiverse.io by vaibhavchandranv */ 
+.window {
+    width: fit-content;
+  height: fit-content;
+  font-family: Montserrat, sans-serif;
+  translate: -6px -6px;
+  background: #240115 ;
+  border: 3px solid #000100;
+  box-shadow:0 0 5px #fd336d;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+.titlebar h1{
+    padding: 0;
+    margin: 0;
+}
+
+.titlebar {
+  font-family: Montserrat, sans-serif;
+  font-size: 14px;
+  font-weight: 900;
+  width: 100%;
+  height: 32px;
+  background: #000100;
+  padding: 5px 12px;
+  color: #94C5CC;
+  border-bottom: 3px solid #fd336d;
+}
+
+.content {
+  padding: 2rem 2rem;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.window:hover {
+  translate: -6px;
 }

@@ -4,12 +4,12 @@ import Skills from "../components/Skills";
 
 function PageExperiences() {
   return (
-    <>
-      <h1>Experiences</h1>
+    <section className="experiences-section">
+      <h1 className="page-header">Experiences</h1>
       <Education />
       <Skills />
       <WorkHistory />
-    </>
+    </section>
   );
 }
 

@@ -29,12 +29,12 @@ function PageProject() {
   }, [restPath, runWithLoading]);
 
   return (
-    <section>
+    <section className="project-section">
       {isLoaded ? (
         <>
           {restData ? (
             <>
-              <h1>{decodeHtml(restData.title.rendered)}</h1>
+              <h1 className="page-header">{decodeHtml(restData.title.rendered)}</h1>
               <FeaturedImage
                 featuredImageObject={restData._embedded["wp:featuredmedia"][0]}
               />

@@ -1,0 +1,116 @@
+
+.education-timeline {
+  position: relative;
+  display: flex;
+  width: min(100%, 56rem);
+  padding: 1rem;
+}
+
+.education-item {
+  position: relative;
+  display: grid;
+  flex: 0 0 16rem;
+  grid-template-rows: 1fr 1rem 1fr;
+  min-height: 23rem;
+}
+
+.education-item::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  left: 0;
+  height: 2px;
+  background: #94C5CC;
+}
+
+.education-item:first-child::before {
+  left: 50%;
+}
+
+.education-item:last-child::before {
+  right: 50%;
+}
+
+.education-card {
+  grid-row: 1;
+  align-self: end;
+  margin: 0 1rem 1rem;
+  padding: 1.25rem;
+  border: 1px solid #fd336d;
+  border-radius: 0.75rem;
+  background-color: #000100;
+  box-shadow: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.25);
+  transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+.education-card:hover {
+  border-color: #fd336d;
+  transform: translateY(-3px);
+}
+
+.education-card h3 {
+  margin: 0 0 1rem;
+  color: #94c5cc;
+  font-size: 1.1rem;
+  line-height: 1.35;
+}
+
+.education-item:nth-child(even) .education-card {
+  grid-row: 3;
+  align-self: start;
+  margin: 1rem 1rem 0;
+}
+
+.education-meta {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  margin: 0.65rem 0 0;
+  line-height: 1.5;
+}
+
+.education-meta svg {
+  flex: 0 0 1.1rem;
+  width: 1.1rem;
+  height: 1.1rem;
+  margin-top: 0.15rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.7;
+}
+
+.education-dates {
+  color: #fd789f;
+  font-size: 0.9rem;
+}
+
+.education-school {
+  color: #d2e5e8;
+}
+
+.education-marker {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0.875rem;
+  height: 0.875rem;
+  border: 3px solid #240115;
+  border-radius: 50%;
+  background: #94C5CC;
+  box-shadow: 0 0 0 2px #fd336d;
+  transform: translate(-50%, -50%);
+}
+
+@media (max-width: 600px) {
+  .education-timeline {
+    width: 100%;
+    padding-inline: 0.5rem;
+  }
+
+  .education-item {
+    flex-basis: min(16rem, 80vw);
+  }
+}

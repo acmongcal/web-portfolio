@@ -25,12 +25,13 @@ function PageProjects() {
     fetchData();
   }, [restPath, runWithLoading]);
   return (
-    <section>
+    <section className="projects-section">
+      <h1 className="page-header">Projects</h1>
       {isLoaded ? (
-        <ul>
+        <ul className="btn-group">
           <li>
             <button
-              className={filter == "All" ? "active-btn" : "filter"}
+              className={filter == "All" ? "active-btn button-53" : "button-53"} 
               onClick={() => setFilter("All")}
             >
               All
@@ -41,7 +42,7 @@ function PageProjects() {
                 <li key={index} id={`project-type-${projectType.id}`}>
                   <button
                     className={
-                      filter == projectType.name ? "active-btn" : "filter"
+                      filter == projectType.name ? "active-btn button-53" : "button-53"
                     }
                     onClick={() => setFilter(projectType.name)}
                   >
