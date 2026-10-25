@@ -25,7 +25,7 @@ function Projects({ limit, filter }) {
   }, [restPath, runWithLoading]);
 
   return (
-    <section>
+    <section className={limit?"slider":""}>
       {isLoaded ? (
         <>
           {limit ? (
