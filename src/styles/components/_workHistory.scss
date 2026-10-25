@@ -1,0 +1,173 @@
+.work-history-timeline {
+  position: relative;
+  display: grid;
+  gap: 1.5rem;
+  max-width: 64rem;
+  margin: 1.5rem auto;
+  padding-block: 1rem;
+}
+
+.work-history-timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background: linear-gradient(#94c5cc, #fd336d, #94c5cc);
+  transform: translateX(-50%);
+}
+
+.work-history-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 3rem minmax(0, 1fr);
+  align-items: center;
+  min-height: 10rem;
+}
+
+.work-history-card {
+  grid-column: 1;
+  min-width: 0;
+  margin-right: 0.75rem;
+  padding: 1.25rem;
+  border: 1px solid #94C5CC;
+  border-left: 3px solid #fd336d;
+  background: #000100;
+  transition: transform 180ms ease;
+}
+
+.work-history-dates {
+  grid-column: 3;
+  grid-row: 1;
+  align-self: center;
+  min-width: 0;
+  margin: 0 0 0 0.75rem;
+  color: #94C5CC;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.work-history-card:hover {
+  border-color: #fd336d;
+  box-shadow:0 0 5px #fd336d;
+  transform: translateY(-3px);
+}
+
+.work-history-item:nth-child(even) .work-history-card {
+  grid-column: 3;
+  margin-right: 0;
+  margin-left: 0.75rem;
+  border-right: 3px solid #fd336d;
+  border-left: 1px solid #94C5CC;
+}
+
+.work-history-item:nth-child(even) .work-history-dates {
+  grid-column: 1;
+  margin: 0 0.75rem 0 0;
+  text-align: right;
+}
+
+.work-history-heading {
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid #94C5CC;
+}
+
+.work-history-heading h3 {
+  margin: 0 0 0.75rem;
+  color: #94c5cc;
+  font-size: 1.2rem;
+  line-height: 1.35;
+}
+
+.work-history-meta {
+  margin: 0.35rem 0 0;
+  line-height: 1.5;
+}
+
+.work-history-company {
+  margin-top: 0;
+  color: #d2e5e8;
+  font-weight: 700;
+}
+
+
+.work-history-details h4 {
+  margin: 0.75rem 0 0.35rem;
+  color: #94c5cc;
+  font-size: 0.95rem;
+}
+
+.work-history-details p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.work-history-details ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0.5rem 0 0;
+  padding: 0;
+}
+
+.work-history-details li {
+  padding: 0.35rem 0.65rem;
+  border: 1px solid #fd336d;
+  color: #d2e5e8;
+  font-size: 0.85rem;
+}
+
+.work-history-marker {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  width: 0.9rem;
+  height: 0.9rem;
+  border: 3px solid #240115;
+  background: #fd336d;
+  box-shadow: 0 0 0 2px #94c5cc;
+  transform: translate(-50%, -50%);
+}
+
+@media (max-width: 700px) {
+  .work-history-timeline {
+    padding-left: 1.5rem;
+  }
+
+  .work-history-timeline::before {
+    left: 0.5rem;
+  }
+
+  .work-history-item {
+    grid-template-columns: 1fr;
+  }
+
+  .work-history-card,
+  .work-history-item:nth-child(even) .work-history-card {
+    grid-column: 1;
+    margin: 0;
+    border-right: 1px solid #94C5CC;
+    border-left: 3px solid #fd336d;
+  }
+
+  .work-history-dates,
+  .work-history-item:nth-child(even) .work-history-dates {
+    grid-column: 1;
+    grid-row: 1;
+    margin: 0 0 0.5rem;
+    text-align: left;
+  }
+
+  .work-history-card,
+  .work-history-item:nth-child(even) .work-history-card {
+    grid-row: 2;
+  }
+
+  .work-history-marker {
+    left: -1rem;
+  }
+}

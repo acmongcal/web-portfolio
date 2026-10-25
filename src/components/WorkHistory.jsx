@@ -31,31 +31,43 @@ function WorkHistory() {
       </div>
       <div className="content">
         {isLoaded ? (
-          <>
-            {restData ? (
-              restData.map((work, index) => (
-                <article key={index} id={`work-${work.id}`}>
-                  <h3>{work.title.rendered}</h3>
-                  <p>
+          restData.length > 0 ? (
+            <div className="work-history-timeline">
+              {restData.map((work) => (
+                <article
+                  className="work-history-item"
+                  key={work.id}
+                  id={`work-${work.id}`}
+                >
+                  <span className="work-history-marker"/>
+                  <p className="work-history-meta work-history-dates">
                     {formatDate(work.acf.start_date)} -{" "}
                     {formatDate(work.acf.end_date)}
                   </p>
-                  <h3>Company: {work.acf.company_name} </h3>
-                  <h3>Reflection</h3>
-                  <p>{work.acf.reflection}</p>
-                  <h3>Roles:</h3>
-                  <ul>
-                    {work.acf.roles.map((role, index) => (
-                      <li key={index}>{role.role}</li>
-                    ))}
-                  </ul>
+                  <div className="work-history-card">
+                    <div className="work-history-details">
+                      <h4>Reflection</h4>
+                      <p>{work.acf.reflection}</p>
+                      <h4>Roles</h4>
+                      <ul>
+                        {work.acf.roles.map((role, roleIndex) => (
+                          <li key={roleIndex}>{role.role}</li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div className="work-history-heading">
+                      <h3>{work.title.rendered}</h3>
+                      <p className="work-history-meta work-history-company">
+                        {work.acf.company_name}
+                      </p>
+                    </div>
+                  </div>
                 </article>
-              ))
-            ) : (
-              //Fallback if rest api failed to load
-              <p>No work experiences found</p>
-            )}
-          </>
+              ))}
+            </div>
+          ) : (
+            <p>No work experiences found</p>
+          )
         ) : null}
       </div>
     </section>

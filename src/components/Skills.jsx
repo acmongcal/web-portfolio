@@ -24,7 +24,7 @@ function Skills() {
     fetchData();
   }, [restPath, runWithLoading]);
   return (
-    <section className="window">
+    <section className="window skills">
       <div className="titlebar">
         <h2>Skills</h2>
       </div>
@@ -33,13 +33,33 @@ function Skills() {
           <>
             {restData ? (
               restData.map((skillType) => (
-                <article key={skillType.id}>
-                  <h3 id={`skill-${skillType.id}`}>
-                    {decodeHtml(skillType.title.rendered)}
+                <article
+                  className="skill-cluster"
+                  key={skillType.id}
+                  style={{
+                    "--skill-radius": `${Math.max(
+                      7.5,
+                      skillType.acf.skills.length > 1
+                        ? 3.5 /
+                            Math.sin(Math.PI / skillType.acf.skills.length) +
+                            0.5
+                        : 7.5,
+                    )}rem`,
+                  }}
+                >
+                  <h3 className="skill-cluster-title" id={`skill-${skillType.id}`}>
+                    <span>{decodeHtml(skillType.title.rendered)}</span>
                   </h3>
-                  <ul>
+                  <ul className="skill-cluster-list">
                     {skillType.acf.skills.map((skill, index) => (
-                      <li key={index}>{skill.skill}</li>
+                      <li
+                        key={index}
+                        style={{
+                          "--skill-angle": `${(360 * index) / skillType.acf.skills.length}deg`,
+                        }}
+                      >
+                        <span>{skill.skill}</span>
+                      </li>
                     ))}
                   </ul>
                 </article>
