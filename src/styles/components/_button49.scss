@@ -9,7 +9,7 @@
   font-family: 'Bebas Neue', sans-serif;
   background: #fd336d;
   border: 0;
-  color: #fff;
+  color: #000100;
   letter-spacing: 3px;
   outline: transparent;
   position: relative;
@@ -34,7 +34,7 @@
   right: 0;
   bottom: 0;
   background: linear-gradient(transparent 3%, #94C5CC 3%, #94C5CC 5%, #fd336d 5%);
-  text-shadow: -3px -3px 0px #F8F005, 3px 3px 0px #94C5CC;
+  text-shadow: -3px -3px 0px #fd336d, 3px 3px 0px #94C5CC;
   clip-path: var(--slice-0);
 }
 

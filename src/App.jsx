@@ -1,4 +1,4 @@
-import { Route, Routes, Link, NavLink } from "react-router-dom";
+import { Route, Routes, NavLink } from "react-router-dom";
 import { LoadingProvider } from "./context/LoadingProvider";
 import PageHome from "./pages/PageHome";
 import PageProjects from "./pages/PageProjects";
@@ -47,10 +47,18 @@ function App() {
             <a href="mailto:kuuuhakudev@gmail.com">
               <img className="logo" src={MailIcon} alt="mail-icon" />
             </a>
-            <a href="https://www.linkedin.com/in/acmongcal" target="_blank" rel="noopener">
+            <a
+              href="https://www.linkedin.com/in/acmongcal"
+              target="_blank"
+              rel="noopener"
+            >
               <img className="logo" src={LinkedInIcon} alt="linkedin-icon" />
             </a>
-            <a href="https://github.com/acmongcal" target="_blank" rel="noopener">
+            <a
+              href="https://github.com/acmongcal"
+              target="_blank"
+              rel="noopener"
+            >
               <img className="logo" src={GithubIcon} alt="github-icon" />
             </a>
           </div>

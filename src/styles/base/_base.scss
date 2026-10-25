@@ -1,4 +1,5 @@
 
+
 body{
     margin: 0;
     background: radial-gradient( 
@@ -58,28 +59,6 @@ ul{
   margin-bottom: 5rem;
 }
 
-.site-navigation{
-    background-color: #000100;
-    height: 4rem;
-}
-.site-navigation ul{
-    margin: 0;
-    padding: 1.5rem 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content:space-around;
-}
-
-.site-navigation ul li a,
-.site-navigation ul li a:visited{
-    color: #94C5CC;
-    text-decoration: none;
-}
-
-
-.site-navigation ul li a:hover{
-    color: #fd336d;
-}
 
 
 footer{
