@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect, useContext, useRef } from "react";
 import { restBase } from "../utilities/Utilities";
 import { LoadingContext } from "../context/LoadingContext";
 import ProjectCard from "./ProjectCard";
@@ -6,7 +6,26 @@ function Projects({ limit, filter }) {
   const restPath = restBase + "project?_embed=1";
   const [restData, setData] = useState([]);
   const [isLoaded, setLoadStatus] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+  const sliderRef = useRef(null);
   const { runWithLoading } = useContext(LoadingContext);
+  const isPaused = isHovered || prefersReducedMotion;
+
+  useEffect(() => {
+    const motionPreference = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    );
+    const updateMotionPreference = (event) => {
+      setPrefersReducedMotion(event.matches);
+    };
+
+    updateMotionPreference(motionPreference);
+    motionPreference.addEventListener("change", updateMotionPreference);
+    return () => {
+      motionPreference.removeEventListener("change", updateMotionPreference);
+    };
+  }, []);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -24,8 +43,55 @@ function Projects({ limit, filter }) {
     fetchData();
   }, [restPath, runWithLoading]);
 
+  useEffect(() => {
+    const slider = sliderRef.current;
+    if (!limit || !isLoaded || isPaused || prefersReducedMotion || !slider) {
+      return undefined;
+    }
+
+    const intervalId = window.setInterval(() => {
+      const cards = Array.from(slider.querySelectorAll(".project-card"));
+      if (cards.length < 2) return;
+
+      const sliderCenter =
+        slider.getBoundingClientRect().left + slider.clientWidth / 2;
+      const currentIndex = cards.reduce(
+        (closestIndex, card, index) => {
+          const closestDistance = Math.abs(
+            cards[closestIndex].getBoundingClientRect().left +
+              cards[closestIndex].getBoundingClientRect().width / 2 -
+              sliderCenter,
+          );
+          const distance = Math.abs(
+            card.getBoundingClientRect().left +
+              card.getBoundingClientRect().width / 2 -
+              sliderCenter,
+          );
+          return distance < closestDistance ? index : closestIndex;
+        },
+        0,
+      );
+      const nextCard = cards[(currentIndex + 1) % cards.length];
+      const nextCardRect = nextCard.getBoundingClientRect();
+      const nextScrollLeft =
+        slider.scrollLeft +
+        nextCardRect.left -
+        slider.getBoundingClientRect().left -
+        (slider.clientWidth - nextCardRect.width) / 2;
+
+      slider.scrollTo({ left: nextScrollLeft, behavior: "smooth" });
+    }, 5000);
+
+    return () => window.clearInterval(intervalId);
+  }, [isLoaded, isPaused, limit, restData]);
+
   return (
-    <section className={limit?"slider":""}>
+    <section
+      className={limit ? "slider" : ""}
+      ref={limit ? sliderRef : null}
+      onMouseEnter={limit ? () => setIsHovered(true) : undefined}
+      onMouseLeave={limit ? () => setIsHovered(false) : undefined}
+    >
       {isLoaded ? (
         <>
           {limit ? (
