@@ -1,9 +1,9 @@
 import ArtGallery from "../components/ArtGallery";
-
+import PersonaPhoto from "../assets/images/kuuhaku.jpg";
 function PageAbout() {
   return (
     <div className="about-section">
-      <section >
+      <section>
         <h1 className="page-header">My Story</h1>
         <p>
           I'm a junior web developer from Computer Science and with 6 years
@@ -23,10 +23,11 @@ function PageAbout() {
         </p>
         <p>
           I am Filipino who migrated to Canada which makes me able to
-          collaborate with more people of different languages and country. I speak english
-          and tagalog fluently, and limited working proficiency for nihongo
-          where I studied it for 6 months from my past company.
+          collaborate with more people of different languages and country. I
+          speak english and tagalog fluently, and limited working proficiency
+          for nihongo where I studied it for 6 months from my past company.
         </p>
+        <img className="profile" src={PersonaPhoto} alt="A portrait drawn" />
       </section>
       <section>
         <h2>What I Do During Free Time </h2>
@@ -56,7 +57,14 @@ function PageAbout() {
         </article>
         <article>
           <h3>Reading Manga and Manhwa</h3>
-          <p>Whenever I take a break from watching anime or getting cliffhangers, I read the manga/manhwa of the anime I watch to learn more what happens next to the story. Some of the top mangas that I like are Kaoru Hana Wa Rin To Saku, Call of the Night and Loner Life in Another World. For the manwhas that ones that I currently like are Solo Leveling, Sweet Home and Our Guild's Idol.</p>
+          <p>
+            Whenever I take a break from watching anime or getting cliffhangers,
+            I read the manga/manhwa of the anime I watch to learn more what
+            happens next to the story. Some of the top mangas that I like are
+            Kaoru Hana Wa Rin To Saku, Call of the Night and Loner Life in
+            Another World. For the manwhas that ones that I currently like are
+            Solo Leveling, Sweet Home and Our Guild's Idol.
+          </p>
         </article>
         <article>
           <h3>Watching Vtubers</h3>
@@ -82,7 +90,9 @@ function PageAbout() {
             like are IU, Twice, One ok Rock, Eve, Arekun, Shawn Mendes, Green
             Day, MindaRyn and BoyWithUke.
           </p>
-          <a href="https://open.spotify.com/user/22u3dspdoaewguhwr4rtr3kei?si=ab9165c68cab4be5">Spotify Profile</a>
+          <a href="https://open.spotify.com/user/22u3dspdoaewguhwr4rtr3kei?si=ab9165c68cab4be5">
+            Spotify Profile
+          </a>
         </article>
         <article>
           <h3>Playing Guitar</h3>
@@ -104,19 +114,38 @@ function PageAbout() {
       </section>
       <section>
         <h2>Fun Facts</h2>
-        <p>Back in my university days, I got elected as president for the Computer Science Students Organization known as Komsai.org then Vice President External for the next academic year. During this time I got to interact with a lot of people such as my schoolmates, other officers and also companies/individuals outside the university. This helped a lot to improve my planning, communication and leadership skills since I had to conduct regular meetings, assign tasks to officers, thing about events for the org and handle processing of different permits. Here are some of the events that I hosted during my term:</p>
+        <p>
+          Back in my university days, I got elected as president for the
+          Computer Science Students Organization known as Komsai.org then Vice
+          President External for the next academic year. During this time I got
+          to interact with a lot of people such as my schoolmates, other
+          officers and also companies/individuals outside the university. This
+          helped a lot to improve my planning, communication and leadership
+          skills since I had to conduct regular meetings, assign tasks to
+          officers, thing about events for the org and handle processing of
+          different permits. Here are some of the events that I hosted during my
+          term:
+        </p>
         <h3>Acquaintance Parties</h3>
-        These event was held annually for the computer science students where we organized different fun activities for them to get to know each other and make friends.
+        These event was held annually for the computer science students where we
+        organized different fun activities for them to get to know each other
+        and make friends.
         <p>Insert gallery</p>
-        <h3>Esports Tournament</h3>
-        I hosted a League of Legends esport tournament where students within the university create a team of 5 and compete for a cash prize.
+        <h3>Esports Tournament</h3>I hosted a League of Legends esport
+        tournament where students within the university create a team of 5 and
+        compete for a cash prize.
         <p>Insert gallery</p>
         <h3>KomCon (Computer Science Conference)</h3>
-        <p>These event was also held annually where we invite various guests from the Computer Science Fields to provide talks and students from different schools can participate and learn more about them.</p>
-
+        <p>
+          These event was also held annually where we invite various guests from
+          the Computer Science Fields to provide talks and students from
+          different schools can participate and learn more about them.
+        </p>
         <h3>Job Fair</h3>
-        <p>These event was also held annually where we invite various companies to provide work opportunities for the graduating students</p>
-        
+        <p>
+          These event was also held annually where we invite various companies
+          to provide work opportunities for the graduating students
+        </p>
         <p>Insert gallery</p>
       </section>
     </div>

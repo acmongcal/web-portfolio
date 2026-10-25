@@ -1,4 +1,6 @@
 
+
+//Desktop Navigation
 .site-navigation{
     background-color: #000100;
     height: 4rem;
@@ -61,21 +63,93 @@
     animation: none;
 }
 
+
+
+//Mobile Navigation
+
+.mobile-nav{
+    position: fixed;
+    bottom: 1.25rem;
+    z-index: 20;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.mobile-nav-menu{
+    position: absolute;
+    bottom: calc(100% + 0.75rem);
+    left: 50%;
+    display: grid;
+    gap: 0.25rem;
+    min-width: 12rem;
+    padding: 0.5rem;
+    border: 1px solid #94C5CC;
+    background: #000100;
+    visibility: hidden;
+    transform: translate(-50%, 0.5rem);
+    transition: opacity 180ms ease, transform 180ms ease, visibility 180ms;
+}
+
+.mobile-nav.is-open .mobile-nav-menu{
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 0);
+}
+
+.mobile-nav-menu a{
+    padding: 0.75rem 1rem;
+    color: #94c5cc;
+    transition: background-color 150ms ease, color 150ms ease;
+}
+
+
+.mobile-nav-menu a.active{
+    background: #fd336d;
+    color: #000100;
+}
+
+.mobile-nav-toggle{
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.8rem 1.25rem;
+    border: 1px solid #fd336d;
+    background: #000100;
+    color: #94c5cc;
+    box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.4);
+}
+
+
+.mobile-nav-icon{
+    display: grid;
+    gap: 4px;
+    width: 1.25rem;
+}
+
+.mobile-nav-icon span{
+    width: 100%;
+    height: 2px;
+    border-radius: 2px;
+    background: currentColor;
+    transition: transform 180ms ease, opacity 180ms ease;
+}
+
+.mobile-nav.is-open .mobile-nav-icon span:first-child{
+    transform: translateY(6px) rotate(45deg);
+}
+
+.mobile-nav.is-open .mobile-nav-icon span:nth-child(2){
+    opacity: 0;
+}
+
+.mobile-nav.is-open .mobile-nav-icon span:last-child{
+    transform: translateY(-6px) rotate(-45deg);
+}
+
 @keyframes active-nav-cursor{
     to{
         opacity: 0;
     }
 }
 
-@media (prefers-reduced-motion: reduce){
-    .site-navigation ul li a.active::after,
-    .site-navigation ul li a:not(.active):hover::after{
-        animation: none;
-        transition: none;
-    }
 
-    .site-navigation ul li a,
-    .site-navigation ul li a:visited{
-        transition: none;
-    }
-}

@@ -5,6 +5,7 @@ import GithubIcon from "../assets/images/github-icon.png";
 import LinkedInIcon from "../assets/images/linkedin-icon.png";
 import MailIcon from "../assets/images/mail-icon.png";
 function PageHome() {
+
   return (
     <div className="home-container">
       <section className="window">
@@ -56,7 +57,7 @@ function PageHome() {
               </div>
             </div>
           </article>
-          <h2>Tech Stack</h2>
+          <h2>Tech Stack </h2>
           <TechStackLogos />
         </div>
       </section>
