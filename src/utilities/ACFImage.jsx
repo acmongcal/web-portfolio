@@ -4,20 +4,20 @@
 
 function ACFImage({ acfImageObject, acfImageSize }) {
 
-    let imgWidth = acfImageObject.width;
-    let imgHeight = acfImageObject.height;
-    let imgURL = acfImageObject.url;
+    let imgWidth = acfImageObject.media_details.width;
+    let imgHeight = acfImageObject.media_details.height;
+    let imgURL = acfImageObject.source_url;
     let size = acfImageSize;
 
     return (
         <>
-            {acfImageObject.sizes[size] ?
+            {acfImageObject.media_details.sizes[size] ?
                 <figure className="acf-image">
                     <img
-                        src={acfImageObject.sizes[size]}
-                        width={acfImageObject.sizes[`${size}-width`]}
-                        height={acfImageObject.sizes[`${size}-height`]}
-                        alt={acfImageObject.alt}
+                        src={acfImageObject.media_details.sizes[size]}
+                        width={acfImageObject.media_details.sizes[`${size}-width`]}
+                        height={acfImageObject.media_details.sizes[`${size}-height`]}
+                        alt={acfImageObject.alt_text}
                     />
                 </figure>
                 :
@@ -26,11 +26,11 @@ function ACFImage({ acfImageObject, acfImageSize }) {
                         src={imgURL}
                         width={imgWidth}
                         height={imgHeight}
-                        alt={acfImageObject.alt}
+                        alt={acfImageObject.alt_text}
                         srcSet={`
                             ${imgURL} ${imgWidth}w,
-                            ${acfImageObject.sizes.large ? acfImageObject.sizes.large + ' ' + acfImageObject.sizes['large-width'] + 'w,' : ''}
-                            ${acfImageObject.sizes.medium_large ? acfImageObject.sizes.medium_large + ' ' + acfImageObject.sizes['medium_large-width'] + 'w,' : ''}
+                            ${acfImageObject.media_details.sizes.large ? acfImageObject.media_details.sizes.large + ' ' + acfImageObject.media_details.sizes['large-width'] + 'w,' : ''}
+                            ${acfImageObject.media_details.sizes.medium_large ? acfImageObject.media_details.sizes.medium_large + ' ' + acfImageObject.media_details.sizes['medium_large-width'] + 'w,' : ''}
                         `}
                     />
                 </figure>

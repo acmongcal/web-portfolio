@@ -3,7 +3,8 @@ import { useParams } from "react-router-dom";
 import { restBase } from "../utilities/Utilities";
 import { LoadingContext } from "../context/LoadingContext";
 import { decodeHtml } from "../utilities/functions";
-import FeaturedImage from "../utilities/FeaturedImage";
+import Slider from "../components/Slider";
+import ACFImage from "../utilities/ACFImage";
 
 function PageProject() {
   const { id } = useParams();
@@ -31,18 +32,22 @@ function PageProject() {
   return (
     <section className="project-section">
       {isLoaded ? (
-        < article className="window">
+        <article className="window">
           {restData ? (
             <>
               <div className="titlebar">
                 <h1>{decodeHtml(restData.title.rendered)}</h1>
               </div>
               <div className="content">
-                <FeaturedImage
-                  featuredImageObject={
-                    restData._embedded["wp:featuredmedia"][0]
-                  }
-                />
+                <Slider targetSubClass="project-screenshot">
+                    {restData._embedded["acf:attachment"].map(
+                      (screenshot, index) => (
+                        <div key={index} className="project-screenshot">
+                          <ACFImage acfImageObject={screenshot} />
+                        </div>
+                      ),
+                    )}
+                </Slider>
                 <ul className="project-techstack">
                   {restData._embedded["acf:post"].map((techstack, index) => (
                     <li key={index}>
@@ -54,6 +59,7 @@ function PageProject() {
                     </li>
                   ))}
                 </ul>
+
                 <p>{restData.acf.project_overview}</p>
                 <h2>Take Away</h2>
                 <h3>Lessons Learned</h3>

@@ -5,7 +5,6 @@ import GithubIcon from "../assets/images/github-icon.png";
 import LinkedInIcon from "../assets/images/linkedin-icon.png";
 import MailIcon from "../assets/images/mail-icon.png";
 function PageHome() {
-
   return (
     <div className="home-container">
       <section className="window">
@@ -61,7 +60,10 @@ function PageHome() {
           <TechStackLogos />
         </div>
       </section>
-      <Projects limit={3} />
+      <section>
+        <h2>Featured Projects</h2>
+        <Projects limit={3} />
+      </section>
     </div>
   );
 }
