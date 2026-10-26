@@ -120,6 +120,48 @@
     box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.4);
 }
 
+.scroll-to-top {
+    position: fixed;
+    right: clamp(1rem, 3vw, 2rem);
+    bottom: 1.5rem;
+    z-index: 19;
+    display: grid;
+    width: 3rem;
+    height: 3rem;
+    place-items: center;
+    padding: 0.65rem;
+    border: 1px solid #fd336d;
+    background: #000100;
+    color: #94c5cc;
+    cursor: pointer;
+    transition: color 180ms ease, background-color 180ms ease,
+        transform 180ms ease;
+}
+
+.scroll-to-top svg {
+    width: 100%;
+    height: 100%;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 2;
+}
+
+.scroll-to-top:hover,
+.scroll-to-top:focus-visible {
+    background: #fd336d;
+    color: #000100;
+    transform: translateY(-0.2rem);
+}
+
+.scroll-to-top:focus-visible {
+    outline: 2px solid #94c5cc;
+    outline-offset: 2px;
+}
+
+.scroll-to-top:focus:not(:focus-visible) {
+    outline: none;
+}
 
 .mobile-nav-icon{
     display: grid;
@@ -161,6 +203,10 @@
     .mobile-nav {
         display: block;
     }
+
+    .scroll-to-top {
+        display: none;
+    }
 }
 
 @media (min-width: 48em) {
@@ -172,6 +218,12 @@
 @media (max-width: 20em) {
     .mobile-nav {
         bottom: 0.75rem;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .scroll-to-top {
+            transition: none;
+        }
     }
 
     .mobile-nav-toggle {

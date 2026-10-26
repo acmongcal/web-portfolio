@@ -11,6 +11,7 @@ import Socials from "./components/Socials";
 function App() {
   const [isBottomNavOpen, setIsBottomNavOpen] = useState(false);
   const [isMobileViewport, setIsMobileViewport] = useState(false);
+  const [showScrollToTop, setShowScrollToTop] = useState(false);
   const bottomNavRef = useRef(null);
 
   useEffect(() => {
@@ -27,6 +28,16 @@ function App() {
     return () => {
       mobileViewport.removeEventListener("change", handleViewportChange);
     };
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollToTop(window.scrollY > 300);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
@@ -121,6 +132,31 @@ function App() {
           <Socials location="footer"/>
           <p>&copy; Kuuhaku Dev {new Date().getFullYear()}.</p>
         </footer>
+        {!isMobileViewport && showScrollToTop && (
+          <button
+            className="scroll-to-top"
+            type="button"
+            aria-label="Scroll to top"
+            onClick={() =>
+              window.scrollTo({
+                top: 0,
+                behavior: window.matchMedia("(prefers-reduced-motion: reduce)")
+                  .matches
+                  ? "auto"
+                  : "smooth",
+              })
+            }
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path d="m6 14 6-6 6 6" />
+            </svg>
+          </button>
+        )}
       </LoadingProvider>
     </>
   );
