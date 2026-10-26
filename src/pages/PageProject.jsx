@@ -5,13 +5,31 @@ import { LoadingContext } from "../context/LoadingContext";
 import { decodeHtml } from "../utilities/functions";
 import Slider from "../components/Slider";
 import ACFImage from "../utilities/ACFImage";
+import WindowGUI from "../components/WindowGUI";
 
 function PageProject() {
   const { id } = useParams();
   const restPath = restBase + `project/${id}?_embed=1`;
   const [restData, setData] = useState([]);
   const [isLoaded, setLoadStatus] = useState(false);
+  const [activeProjectTab, setActiveProjectTab] = useState("takeaways");
   const { runWithLoading } = useContext(LoadingContext);
+
+  const handleProjectTabKeyDown = (event) => {
+    if (event.key === "ArrowRight" || event.key === "ArrowLeft") {
+      event.preventDefault();
+      const tabs = Array.from(
+        event.currentTarget.parentElement.querySelectorAll('[role="tab"]'),
+      );
+      const currentIndex = tabs.indexOf(event.currentTarget);
+      const direction = event.key === "ArrowRight" ? 1 : -1;
+      const nextIndex = (currentIndex + direction + tabs.length) % tabs.length;
+      const nextTab = tabs[nextIndex];
+
+      nextTab.focus();
+      setActiveProjectTab(nextTab.dataset.tab);
+    }
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -95,29 +113,82 @@ function PageProject() {
                     </svg>
                   </a>
                 </div>
-                <p>{restData.acf.project_overview}</p>
-                <h2>Take Away</h2>
-                <h3>Lessons Learned</h3>
-                <ul>
-                  {restData.acf.lessons_learned.map((lesson, index) => (
-                    <li key={index}>{lesson.lesson}</li>
-                  ))}
-                </ul>
-                <h3>Reflection</h3>
-                <p>{restData.acf.reflection}</p>
-                {restData.acf.collaborators ? (
-                  <h2>Features I Worked On</h2>
-                ) : (
-                  <h2>Key Features</h2>
-                )}
-                <ul>
-                  {restData.acf.key_features.map((feature, index) => (
-                    <li key={index}>
-                      <h3>{feature.feature}</h3>
-                      <p>{feature.feature_overview}</p>
-                    </li>
-                  ))}
-                </ul>
+                <WindowGUI header="Project Overview">
+                  <p>{restData.acf.project_overview}</p>
+                </WindowGUI>
+                <div className="project-details-tabs">
+                  <div className="project-details-tablist" role="tablist">
+                    <h2
+                      id="project-tab-takeaways"
+                      data-tab="takeaways"
+                      className="project-details-tab"
+                      role="tab"
+                      aria-selected={activeProjectTab === "takeaways"}
+                      aria-controls="project-panel-takeaways"
+                      tabIndex={activeProjectTab === "takeaways" ? 0 : -1}
+                      onClick={() => setActiveProjectTab("takeaways")}
+                      onKeyDown={handleProjectTabKeyDown}
+                    >
+                      Take Away
+                    </h2>
+                    <h2
+                      id="project-tab-features"
+                      data-tab="features"
+                      className="project-details-tab"
+                      role="tab"
+                      aria-selected={activeProjectTab === "features"}
+                      aria-controls="project-panel-features"
+                      tabIndex={activeProjectTab === "features" ? 0 : -1}
+                      onClick={() => setActiveProjectTab("features")}
+                      onKeyDown={handleProjectTabKeyDown}
+                    >
+                      {restData.acf.collaborators
+                        ? "Features I Worked On"
+                        : "Key Features"}
+                    </h2>
+                    <svg
+                      className="project-details-close-icon"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <path d="M6 6 18 18M18 6 6 18" />
+                    </svg>
+                  </div>
+                  <section
+                    id="project-panel-takeaways"
+                    className="project-details-panel"
+                    role="tabpanel"
+                    aria-labelledby="project-tab-takeaways"
+                    hidden={activeProjectTab !== "takeaways"}
+                  >
+                    <h3>Lessons Learned</h3>
+                    <ul>
+                      {restData.acf.lessons_learned.map((lesson, index) => (
+                        <li key={index}>{lesson.lesson}</li>
+                      ))}
+                    </ul>
+                    <h3>Reflection</h3>
+                    <p>{restData.acf.reflection}</p>
+                  </section>
+                  <section
+                    id="project-panel-features"
+                    className="project-details-panel"
+                    role="tabpanel"
+                    aria-labelledby="project-tab-features"
+                    hidden={activeProjectTab !== "features"}
+                  >
+                    <ul>
+                      {restData.acf.key_features.map((feature, index) => (
+                        <li key={index}>
+                          <h3>{feature.feature}</h3>
+                          <p>{feature.feature_overview}</p>
+                        </li>
+                      ))}
+                    </ul>
+                  </section>
+                </div>
               </div>
             </>
           ) : (

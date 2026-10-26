@@ -1,5 +1,7 @@
 import ArtGallery from "../components/ArtGallery";
 import PersonaPhoto from "../assets/images/kuuhaku.jpg";
+import WindowGUI from "../components/WindowGUI";
+import Socials from "../components/Socials";
 function PageAbout() {
   return (
     <div className="about-section">
@@ -28,11 +30,11 @@ function PageAbout() {
           for nihongo where I studied it for 6 months from my past company.
         </p>
         <img className="profile" src={PersonaPhoto} alt="A portrait drawn" />
+        <Socials location="home"/>
       </section>
-      <section>
+      <section className="hobbies">
         <h2>What I Do During Free Time </h2>
-        <article>
-          <h3>Playing Computer Games</h3>
+        <WindowGUI header="Playing Computer Games" h={3}>
           <p>
             I play a lot of online gacha games such as Hololive Dreams,
             Arknights: Endfield, Wuthering Waves and Nikke. Whenever I get
@@ -43,9 +45,9 @@ function PageAbout() {
             Aincrad.
           </p>
           <a href="https://steamcommunity.com/id/kuuhaku13/">Steam Profile</a>
-        </article>
-        <article>
-          <h3>Watching Shows</h3>
+        </WindowGUI>
+
+        <WindowGUI header="Watching Shows" h={3}>
           <p>
             I watch most of the latest anime and as well of the previous ones as
             long as they are either one of the genres that I like such as
@@ -54,9 +56,8 @@ function PageAbout() {
             Life and Hyouka. Aside from anime, I also watch kdrama from time to
             time whenever IU is part of it.
           </p>
-        </article>
-        <article>
-          <h3>Reading Manga and Manhwa</h3>
+        </WindowGUI>
+        <WindowGUI header="Reading Manga and Manhwa" h={3}>
           <p>
             Whenever I take a break from watching anime or getting cliffhangers,
             I read the manga/manhwa of the anime I watch to learn more what
@@ -65,9 +66,8 @@ function PageAbout() {
             Another World. For the manwhas that ones that I currently like are
             Solo Leveling, Sweet Home and Our Guild's Idol.
           </p>
-        </article>
-        <article>
-          <h3>Watching Vtubers</h3>
+        </WindowGUI>
+        <WindowGUI header="Watching Vtubers" h={3}>
           <p>
             Whenever I have a bad day or just dont have anything to do, I
             usually watch vtuber streams where they play games, doing a watch
@@ -77,13 +77,8 @@ function PageAbout() {
             hololive but I also watch some indie vtubers. My kamioshi which
             introduced me to vtubers is Shirakami Fubuki.
           </p>
-          <p>
-            You can check the oshi marks below and click them if you are
-            interested in knowing about them.
-          </p>
-        </article>
-        <article>
-          <h3>Listening to Music</h3>
+        </WindowGUI>
+        <WindowGUI header="Listening to Music" h={3}>
           <p>
             I listen to a lot of music genres such as kpop, jrock, anisongs,
             vtuber music, rock and pop songs. Some of the artists/bands that are
@@ -93,24 +88,23 @@ function PageAbout() {
           <a href="https://open.spotify.com/user/22u3dspdoaewguhwr4rtr3kei?si=ab9165c68cab4be5">
             Spotify Profile
           </a>
-        </article>
-        <article>
-          <h3>Playing Guitar</h3>
+        </WindowGUI>
+        <WindowGUI header="Playing Guitar" h={3}>
+          <h3></h3>
           <p>
             I play guitar for a couple years already but have been on and off. I
             consider myself as somewhat intermediate level since I mostly know
             how to play any chords and sing while playing it.
           </p>
-        </article>
-        <article>
-          <h3>Drawing</h3>
+        </WindowGUI>
+        <WindowGUI header="Drawing" h={3}>
           <p>
             Lately I have been practicing drawing since I wanted to draw for the
             vtubers and streamers that I follow ,anime that I watch and also
             trying to do art commissions as a side gig.
           </p>
           <ArtGallery />
-        </article>
+        </WindowGUI>
       </section>
       <section>
         <h2>Fun Facts</h2>
