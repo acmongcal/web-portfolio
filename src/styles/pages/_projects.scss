@@ -1,0 +1,49 @@
+.btn-group .active-btn, .btn-group .active-btn:hover{
+    background: #fd336d;
+    color: #000100;
+}
+
+
+.btn-group{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+
+.projects-section{
+    padding: 0 clamp(1rem, 5vw, 5rem);
+    font-size: clamp(1rem, 0.96rem + 0.2vw, 1.125rem);
+}
+
+.projects-section .btn-group button {
+    font-size: clamp(1rem, 0.96rem + 0.25vw, 1.125rem);
+}
+
+.projects-section section{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    min-width: 0;
+}
+
+@media (max-width: 43.75em) {
+    .projects-section section {
+        gap: 1.25rem;
+    }
+
+    .projects-section .btn-group {
+        padding-inline: 0;
+    }
+}
+
+.btn-group button{
+    background:  #000100;
+    color: #ffffff;
+}
+
+.btn-group button:hover{
+    color: #94C5CC;
+}

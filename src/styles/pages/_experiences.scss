@@ -1,0 +1,24 @@
+.titlebar h2{
+    margin: 0;
+}
+
+
+.experiences-section{
+    padding: 0 clamp(1rem, 5vw, 5rem);
+    font-size: clamp(1rem, 0.96rem + 0.2vw, 1.125rem);
+}
+
+.experiences-section > .window {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.experiences-section > h2,
+.experiences-section > section > h2 {
+  font-size: clamp(1.25rem, 1.1rem + 0.8vw, 1.75rem);
+}
+
+.experiences-section .titlebar h2 {
+  font-size: clamp(1rem, 0.96rem + 0.3vw, 1.2rem);
+}

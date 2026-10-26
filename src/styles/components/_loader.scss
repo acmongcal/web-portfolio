@@ -1,0 +1,62 @@
+
+.loading-bg {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: radial-gradient( 
+    circle farthest-corner at 50% 52.5%, 
+     #240115 0%, 
+     #000100 90% );
+
+
+  position: fixed;
+  z-index: 10000;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+}
+
+.circle-line {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  right: auto;
+
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  border: 1.5px solid #94C5CC;
+  box-shadow:0 0 2px #fd336d;
+  transform: translate(-50%, -50%) rotate(0deg);
+
+  animation-duration: 5s;
+  animation-name: rotate_line;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.circle-line.line2 {
+  width: 400px;
+  height: 400px;
+  animation-delay: 1s;
+  border-top-color: transparent;
+}
+
+.circle-line.line3 {
+  width: 450px;
+  height: 450px;
+  animation-delay: 3s;
+  border-bottom-color: transparent;
+  animation-duration: 50s;
+}
+
+@keyframes rotate_line {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}

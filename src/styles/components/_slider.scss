@@ -1,0 +1,54 @@
+.slider {
+    position: relative;
+    width: min(30rem, 100%);
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    height: fit-content;
+    padding: 20px;
+    display: flex;
+    gap: clamp(1rem, 4vw, 2rem);
+    overflow: hidden;
+    scroll-snap-type: x mandatory;
+    anchor-name: --carousel;
+    scroll-marker-group: after;
+}
+
+.slider > * {
+    flex: 0 0 min(30rem, 100%);
+    min-width: 0;
+    scroll-snap-align: center;
+}
+
+.slider::scroll-marker-group {
+    position: absolute;
+    position-anchor: --carousel;
+    top: calc(anchor(bottom) - 2rem );
+    justify-self: anchor-center;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.slider > *::scroll-marker {
+    content: attr(data-accName);
+    width: 3rem;
+    height: 1rem;
+    background-color: transparent;
+    border: 2px solid #94C5CC;
+    background-color: #94C5CC;
+    overflow: hidden;
+    text-indent: 16px;
+    transition: background-color 250ms ease, border-color 250ms ease,
+        transform 250ms ease;
+}
+.slider > *::scroll-marker:target-current {
+    background-color: #fd336d;
+    border: 2px solid #94C5CC;
+    transform: scale(1.15);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .slider > *::scroll-marker {
+        transition: none;
+    }
+}

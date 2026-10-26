@@ -1,0 +1,23 @@
+@use './base/base';
+
+
+
+// Components
+@use './components/button49';
+@use './components/button53';
+@use './components/loader';
+@use './components/projectCard';
+@use './components/education';
+@use './components/skills';
+@use './components/navigation';
+@use './components/workHistory';
+@use './components/slider';
+@use './components/artGallery';
+@use './components/windowGUI';
+
+//Pages
+@use './pages/projects';
+@use './pages/experiences';
+@use './pages/project';
+@use './pages/about';
+@use './pages/notFound';

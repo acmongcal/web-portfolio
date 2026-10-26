@@ -1,0 +1,24 @@
+.page-not-found {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.page-not-found .page-header {
+  margin: 0;
+}
+
+.page-not-found p {
+  margin: 0;
+  font-size: clamp(1rem, 0.96rem + 0.2vw, 1.125rem);
+}
+
+.page-not-found .button-53 {
+  width: fit-content;
+}

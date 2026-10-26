@@ -1,0 +1,406 @@
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: "Sansation"
+
+}
+
+
+
+p {
+    font-family:"Tilt Neon";
+
+}
+body{
+    margin: 0;
+    font-size: 1rem;
+    background: radial-gradient( 
+    circle farthest-corner at 50% 52.5%, 
+    #000100 0%, 
+    #240115 90% );
+    color: #94C5CC;
+}
+
+.app-shell {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.app-shell > main {
+    display: flex;
+    flex: 1 0 auto;
+    flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+ul{
+    list-style: none;
+}
+
+.featured-image img{
+    display: block;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.techstack-logo img{
+    height: 2rem;
+    width: 2rem;
+}
+
+.profile{
+    width: 20rem;
+    height: 20rem;
+}
+.home-techstack{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.techstack-logo {
+    max-width: 100%;
+    margin: 0;
+}
+
+.page-header{
+  width: fit-content;
+  padding: 11px 33px;
+  font-size: clamp(1.25rem, 1.1rem + 1vw, 1.5625rem);
+  color: #94C5CC;
+  background: #000100;
+  box-shadow: 6px 6px 0 #fd336d;
+  transform: skewX(-15deg);
+  margin-top: 2rem;
+  margin-bottom: 5rem;
+}
+
+
+
+footer{
+    text-align: center;
+    color: #94C5CC;
+    background-color:#000100;
+    height: 5rem;
+    padding: 3rem 0;
+
+}
+footer p{
+    margin: 0;
+}
+.contact-footer{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.home-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 36rem), 1fr));
+    justify-items: center;
+    max-width: 100rem;
+    margin-inline: auto;
+    padding: 3rem clamp(1.5rem, 5vw, 5rem);
+    column-gap: clamp(3rem, 7vw, 8rem);
+    row-gap: 3rem;
+}
+
+.home-container > * {
+    min-width: 0;
+    max-width: 100%;
+}
+
+.home-container > .window,
+.home-container > section:not(.window) {
+    width: 100%;
+    justify-self: center;
+}
+
+
+.home-socials{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    position: relative;
+    top: -2.5rem;
+}
+
+.home-socials svg, .contact-footer svg{
+    width: 2rem;
+    height: 2rem;
+    fill: currentColor;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.5;
+}
+
+.home-socials a, .contact-footer a{
+    color: #94C5CC;
+}
+
+.home-socials a:hover, .contact-footer a:hover{
+    color: #fd336d;
+}
+
+.home-socials a:first-child svg, .contact-footer a:first-child svg{
+    fill: none;
+}
+
+.home-socials a:first-child svg path:first-child, .contact-footer a:first-child svg path:first-child{
+    fill: none;
+}
+
+.home-socials a:first-child svg path:last-child, .contact-footer a:first-child svg path:last-child{
+    fill: none;
+}
+
+.home-socials a:nth-child(2) svg, .contact-footer a:nth-child(2) svg{
+    stroke: none;
+}
+
+.home-socials a:nth-child(3) svg, .contact-footer a:nth-child(3) svg{
+    stroke: none;
+}
+
+.home-profile{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: center;
+    gap: 2rem;
+    row-gap: 1px;
+}
+
+.home-profile .profile{
+    grid-column: 2;
+    grid-row: 1 / span 3;
+    width: min(100%, 20rem);
+    height: auto;
+    aspect-ratio: 1;
+    justify-self: center;
+    box-shadow: 20px -16px #94C5CC;
+}
+
+.home-profile h2{
+    grid-column: 1;
+    grid-row: 1;
+    margin: 0;
+}
+
+.home-profile .home-socials{
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.home-profile p{
+    grid-column: 1;
+    grid-row: 3;
+    min-width: 0;
+    margin: 0;
+}
+
+.home-ctas{
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+    gap: clamp(1rem, 5vw, 7rem);
+    grid-column: 1 / span 2;
+    min-width: 0;
+    padding: 2rem 0;
+}
+.home-ctas .button-53{
+    width: 100%;
+    padding: 1.5rem;
+}
+
+.home-ctas .button-53:hover{
+    color: #94C5CC;
+    background-color: #000100;
+}
+.home-ctas .button-49, .home-ctas .button-49:after{
+    width: 100%;
+}
+
+//Reference: https://uiverse.io/vaibhavchandranv/swift-ladybug-51
+/* From Uiverse.io by vaibhavchandranv */ 
+.window {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  height: fit-content;
+  font-family: Montserrat, sans-serif;
+  translate: -6px -6px;
+  background: #240115 ;
+  border: 3px solid #000100;
+  box-shadow:0 0 5px #fd336d;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  margin-bottom: 5rem;
+}
+.titlebar h1{
+    padding: 0;
+    margin: 0;
+}
+
+.titlebar {
+  font-family: Montserrat, sans-serif;
+  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  font-weight: 900;
+  box-sizing: border-box;
+  width: 100%;
+  height: fit-content;
+  background: #000100;
+  padding: 5px 12px;
+  color: #94C5CC;
+  border-bottom: 3px solid #fd336d;
+}
+
+.content {
+  box-sizing: border-box;
+  min-width: 0;
+  padding: 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.window:hover {
+  translate: -6px;
+}
+
+@media (max-width: 43.75em) {
+  .home-container {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+    padding: 1.5rem clamp(1rem, 5vw, 2rem);
+    justify-items: center;
+  }
+
+  .home-container > *,
+  .home-container .window {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .home-profile {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.75rem;
+  }
+
+  .home-profile h2,
+  .home-profile .home-socials,
+  .home-profile p,
+  .home-profile .profile {
+    grid-column: 1;
+  }
+
+  .home-profile h2 {
+    grid-row: 1;
+    margin-bottom: 0.75rem;
+  }
+
+  .home-profile .profile {
+    grid-row: 2;
+    justify-self: center;
+    width: min(100%, 20rem);
+    height: auto;
+    aspect-ratio: 1;
+  }
+
+  .home-profile .home-socials {
+    grid-row: 3;
+    top: 0;
+  }
+
+  .home-profile p {
+    grid-row: 4;
+  }
+
+  .home-ctas {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    grid-column: 1;
+    grid-row: 5;
+    padding: 1rem 0;
+  }
+
+  .home-ctas .button-53 {
+    min-width: 0;
+    padding: 1rem 0.5rem;
+  }
+
+  .content {
+    padding: clamp(1rem, 5vw, 1.5rem);
+  }
+
+  .titlebar {
+    height: auto;
+    min-height: 2.5rem;
+  }
+
+  .page-header {
+    max-width: calc(100% - 0.5rem);
+    box-sizing: border-box;
+    margin-bottom: 2rem;
+    padding: 0.6rem 1rem;
+  }
+
+  footer {
+    height: auto;
+    padding: 2rem 1rem;
+  }
+
+  .contact-footer {
+    gap: 1.25rem;
+  }
+
+  .window {
+    translate: 0;
+  }
+
+  .window:hover {
+    translate: 0;
+  }
+}
+
+@media (max-width: 22.5em) {
+  .home-container {
+    padding-inline: 1rem;
+  }
+
+  .home-container .content {
+    padding: 1rem;
+  }
+
+  .home-profile .profile {
+    width: min(100%, 17rem);
+  }
+
+  .home-ctas {
+    gap: 0.5rem;
+  }
+
+  .home-ctas .button-53 {
+    padding-inline: 0.35rem;
+  }
+
+  .home-techstack {
+    gap: 0.5rem;
+  }
+
+  .page-header {
+    padding-inline: 0.75rem;
+  }
+}
