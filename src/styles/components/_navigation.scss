@@ -21,6 +21,7 @@
 
 .site-navigation ul li a,
 .site-navigation ul li a:visited{
+    font-family: "Press Start 2P";
     display: flex;
     align-items: center;
     padding: 0 1rem;
@@ -74,6 +75,7 @@
     z-index: 20;
     left: 50%;
     transform: translateX(-50%);
+    
 }
 
 .mobile-nav-menu{
@@ -101,6 +103,7 @@
     padding: 0.75rem 1rem;
     color: #94c5cc;
     transition: background-color 150ms ease, color 150ms ease;
+    font-family: "Press Start 2P";
 }
 
 
@@ -118,6 +121,7 @@
     background: #000100;
     color: #94c5cc;
     box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.4);
+    font-family: "Press Start 2P";
 }
 
 .scroll-to-top {
