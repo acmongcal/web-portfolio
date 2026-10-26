@@ -5,6 +5,7 @@ import Socials from "../components/Socials";
 function PageHome() {
   return (
     <div className="home-container">
+      <title>Kuuhaku Dev</title>
       <meta name="author" content="Alan Mongcal" />
       <meta
         name="keywords"

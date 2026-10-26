@@ -5,6 +5,7 @@ import Socials from "../components/Socials";
 function PageAbout() {
   return (
     <div className="about-section">
+      <title>My Story | Kuuhaku Dev</title>
       <meta name="author" content="Alan Mongcal" />
       <meta
         name="keywords"

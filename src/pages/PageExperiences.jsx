@@ -5,6 +5,7 @@ import Skills from "../components/Skills";
 function PageExperiences() {
   return (
     <section className="experiences-section">
+      <title>Experiences | Kuuhaku Dev</title>
       <meta name="author" content="Alan Mongcal" />
       <meta
         name="keywords"

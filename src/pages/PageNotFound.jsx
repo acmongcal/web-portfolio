@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 function PageNotFound() {
   return (
     <section className="page-not-found" aria-labelledby="page-not-found-title">
+      <title>404 | Kuuhaku Dev</title>
       <h1 className="page-header" id="page-not-found-title">
         Page Not Found
       </h1>

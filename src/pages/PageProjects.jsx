@@ -26,6 +26,7 @@ function PageProjects() {
   }, [restPath, runWithLoading]);
   return (
     <section className="projects-section">
+      <title>Projects | Kuuhaku Dev</title>
       <meta name="author" content="Alan Mongcal" />
       <meta name="keywords" content="Project, React.js, JavaScript, WooCommerce, WordPress, CMS" />
       <meta

@@ -49,6 +49,7 @@ function PageProject() {
 
   return (
     <section className="project-section">
+      
       <meta name="author" content="Alan Mongcal" />
       <meta
         name="keywords"
@@ -60,6 +61,7 @@ function PageProject() {
       />
       {isLoaded ? (
         <article className="window">
+          <title>{`${restData.title.rendered} | Kuuhaku Dev`}</title>
           {restData ? (
             <>
               <div className="titlebar">
