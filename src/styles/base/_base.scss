@@ -1,5 +1,20 @@
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: "Sansation"
 
+}
+
+
+
+p {
+    font-family:"Tilt Neon";
+
+}
 body{
     margin: 0;
     font-size: 1rem;
@@ -8,6 +23,18 @@ body{
     #000100 0%, 
     #240115 90% );
     color: #94C5CC;
+}
+
+.app-shell {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.app-shell > main {
+    display: flex;
+    flex: 1 0 auto;
+    flex-direction: column;
 }
 
 a {
