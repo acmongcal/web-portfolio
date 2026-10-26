@@ -97,8 +97,42 @@ footer p{
     top: -2.5rem;
 }
 
-.home-socials img{
+.home-socials svg, .contact-footer svg{
     width: 2rem;
+    height: 2rem;
+    fill: currentColor;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.5;
+}
+
+.home-socials a, .contact-footer a{
+    color: #94C5CC;
+}
+
+.home-socials a:hover, .contact-footer a:hover{
+    color: #fd336d;
+}
+
+.home-socials a:first-child svg, .contact-footer a:first-child svg{
+    fill: none;
+}
+
+.home-socials a:first-child svg path:first-child, .contact-footer a:first-child svg path:first-child{
+    fill: none;
+}
+
+.home-socials a:first-child svg path:last-child, .contact-footer a:first-child svg path:last-child{
+    fill: none;
+}
+
+.home-socials a:nth-child(2) svg, .contact-footer a:nth-child(2) svg{
+    stroke: none;
+}
+
+.home-socials a:nth-child(3) svg, .contact-footer a:nth-child(3) svg{
+    stroke: none;
 }
 
 .home-profile{

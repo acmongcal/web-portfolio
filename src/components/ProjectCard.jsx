@@ -1,6 +1,5 @@
 import FeaturedImage from "../utilities/FeaturedImage";
 import { decodeHtml } from "../utilities/functions";
-import ExternalLinkIcon from "../assets/images/external-link-icon.svg";
 function ProjectCard({ project }) {
   return (
     <article className="project-card">
@@ -27,8 +26,16 @@ function ProjectCard({ project }) {
         <a href={`/project-details/${project.id}`} className="button-49">
           Project Details
         </a>
-        <a href={project.acf.live_site_link} className="button-53" target="_blank" rel="noopener">
-          <img className="logo" src={ExternalLinkIcon} alt="External Link icon" />
+        <a href={project.acf.live_site_link} className="button-53" target="_blank" rel="noopener" aria-label="Open live project in a new tab">
+          <svg
+            className="logo"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <path d="M21 11V3h-8v2h4v2h-2v2h-2v2h-2v2H9v2h2v-2h2v-2h2V9h2V7h2v4h2zM11 5H3v16h16v-8h-2v6H5V7h6V5z" />
+          </svg>
         </a>
       </div>
     </article>

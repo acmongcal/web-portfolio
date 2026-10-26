@@ -11,7 +11,7 @@
     scroll-marker-group: after;
 }
 
-.slider article, .slider li {
+.slider > * {
     scroll-snap-align: center;
 }
 
@@ -24,7 +24,7 @@
     justify-content: center;
     gap: 20px;
 }
-.slider article::scroll-marker, .slider li::scroll-marker {
+.slider > *::scroll-marker {
     content: attr(data-accName);
     width: 3rem;
     height: 1rem;
@@ -36,14 +36,14 @@
     transition: background-color 250ms ease, border-color 250ms ease,
         transform 250ms ease;
 }
-.slider article::scroll-marker:target-current, .slider li::scroll-marker:target-current  {
+.slider > *::scroll-marker:target-current {
     background-color: #fd336d;
     border: 2px solid #94C5CC;
     transform: scale(1.15);
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .slider article::scroll-marker, .slider li::scroll-marker {
+    .slider > *::scroll-marker {
         transition: none;
     }
 }
