@@ -68,6 +68,7 @@
 //Mobile Navigation
 
 .mobile-nav{
+    display: none;
     position: fixed;
     bottom: 1.25rem;
     z-index: 20;
@@ -152,4 +153,29 @@
     }
 }
 
+@media (max-width: 47.9375em) {
+    .site-navigation {
+        display: none;
+    }
 
+    .mobile-nav {
+        display: block;
+    }
+}
+
+@media (min-width: 48em) {
+    .mobile-nav {
+        display: none;
+    }
+}
+
+@media (max-width: 20em) {
+    .mobile-nav {
+        bottom: 0.75rem;
+    }
+
+    .mobile-nav-toggle {
+        gap: 0.5rem;
+        padding: 0.7rem 1rem;
+    }
+}

@@ -23,7 +23,7 @@
 .window-header h3 {
   font-family: Lato, sans-serif;
   font-weight: 900;
-  font-size: 1.35rem;
+  font-size: clamp(1.125rem, 1rem + 0.75vw, 1.35rem);
   letter-spacing: 0.12em;
   color: #94c5cc;
   margin: 0;
@@ -82,13 +82,8 @@
 
 
 
-@media (max-width: 600px) {
+@media (max-width: 37.5em) {
   .window-header h2,
   .window-header h3 {
-    font-size: 1.15rem;
-  }
-
-  .editor-content {
-    font-size: 1.15rem;
   }
 }

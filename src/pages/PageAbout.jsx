@@ -106,42 +106,7 @@ function PageAbout() {
           <ArtGallery />
         </WindowGUI>
       </section>
-      <section>
-        <h2>Fun Facts</h2>
-        <p>
-          Back in my university days, I got elected as president for the
-          Computer Science Students Organization known as Komsai.org then Vice
-          President External for the next academic year. During this time I got
-          to interact with a lot of people such as my schoolmates, other
-          officers and also companies/individuals outside the university. This
-          helped a lot to improve my planning, communication and leadership
-          skills since I had to conduct regular meetings, assign tasks to
-          officers, thing about events for the org and handle processing of
-          different permits. Here are some of the events that I hosted during my
-          term:
-        </p>
-        <h3>Acquaintance Parties</h3>
-        These event was held annually for the computer science students where we
-        organized different fun activities for them to get to know each other
-        and make friends.
-        <p>Insert gallery</p>
-        <h3>Esports Tournament</h3>I hosted a League of Legends esport
-        tournament where students within the university create a team of 5 and
-        compete for a cash prize.
-        <p>Insert gallery</p>
-        <h3>KomCon (Computer Science Conference)</h3>
-        <p>
-          These event was also held annually where we invite various guests from
-          the Computer Science Fields to provide talks and students from
-          different schools can participate and learn more about them.
-        </p>
-        <h3>Job Fair</h3>
-        <p>
-          These event was also held annually where we invite various companies
-          to provide work opportunities for the graduating students
-        </p>
-        <p>Insert gallery</p>
-      </section>
+
     </div>
   );
 }

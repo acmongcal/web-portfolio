@@ -44,7 +44,7 @@
   min-width: 0;
   margin: 0 0 0 0.75rem;
   color: #94C5CC;
-  font-size: 0.9rem;
+  font-size: clamp(0.875rem, 0.84rem + 0.2vw, 0.9375rem);
   line-height: 1.5;
   overflow-wrap: anywhere;
 }
@@ -78,7 +78,7 @@
 .work-history-heading h3 {
   margin: 0 0 0.75rem;
   color: #94c5cc;
-  font-size: 1.2rem;
+  font-size: clamp(1.125rem, 1rem + 0.5vw, 1.25rem);
   line-height: 1.35;
 }
 
@@ -97,7 +97,7 @@
 .work-history-details h4 {
   margin: 0.75rem 0 0.35rem;
   color: #94c5cc;
-  font-size: 0.95rem;
+  font-size: clamp(0.9375rem, 0.9rem + 0.2vw, 1rem);
 }
 
 .work-history-details p {
@@ -117,7 +117,7 @@
   padding: 0.35rem 0.65rem;
   border: 1px solid #fd336d;
   color: #d2e5e8;
-  font-size: 0.85rem;
+  font-size: clamp(0.875rem, 0.84rem + 0.2vw, 0.9375rem);
 }
 
 .work-history-marker {
@@ -133,7 +133,7 @@
   transform: translate(-50%, -50%);
 }
 
-@media (max-width: 700px) {
+@media (max-width: 43.75em) {
   .work-history-timeline {
     padding-left: 1.5rem;
   }

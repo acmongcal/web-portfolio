@@ -6,6 +6,7 @@
 .skills .content{
     display: flex;
     flex-wrap: wrap;
+    container-type: inline-size;
 }
 .skill-cluster {
   --skill-hex-width: clamp(5.5rem, 22vw, 7rem);
@@ -38,7 +39,7 @@
   overflow: hidden;
   background: #000100;
   color: #000100;
-  font-size: clamp(0.8rem, 3vw, 1rem);
+  font-size: clamp(0.875rem, 3vw, 1rem);
   line-height: 1.2;
   transform: translate(-50%, -50%);
 }
@@ -67,7 +68,7 @@
 .skill-cluster-list li {
   background: #fd336d;
   color: #94C5CC;
-  font-size: 0.9rem;
+  font-size: clamp(0.875rem, 0.84rem + 0.2vw, 1rem);
   line-height: 1.2;
   transform:
     translate(-50%, -50%)
@@ -95,8 +96,11 @@
   scale: 1.08;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 37.5em) {
   .skill-cluster {
-    --skill-orbit-radius: min(var(--skill-radius), 7.5rem);
+    --skill-orbit-radius: min(
+      var(--skill-radius),
+      max(3rem, calc((100cqw - var(--skill-hex-width)) / 2 - 0.5rem))
+    );
   }
 }

@@ -1,10 +1,13 @@
 .slider {
     position: relative;
-    width: 30rem;
+    width: min(30rem, 100%);
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
     height: fit-content;
     padding: 20px;
     display: flex;
-    gap: 4vw;
+    gap: clamp(1rem, 4vw, 2rem);
     overflow: hidden;
     scroll-snap-type: x mandatory;
     anchor-name: --carousel;
@@ -12,6 +15,8 @@
 }
 
 .slider > * {
+    flex: 0 0 min(30rem, 100%);
+    min-width: 0;
     scroll-snap-align: center;
 }
 

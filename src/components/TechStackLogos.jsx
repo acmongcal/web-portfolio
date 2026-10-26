@@ -3,7 +3,7 @@ import { restBase } from "../utilities/Utilities";
 import { LoadingContext } from "../context/LoadingContext";
 import FeaturedImage from "../utilities/FeaturedImage";
 
-function TechStackLogos({ embed }) {
+function TechStackLogos() {
   const restPath = restBase + "tech-stack?_embed=1&per_page=100";
   const [restData, setData] = useState([]);
   const [isLoaded, setLoadStatus] = useState(false);
