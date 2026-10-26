@@ -49,6 +49,15 @@ function PageProject() {
 
   return (
     <section className="project-section">
+      <meta name="author" content="Alan Mongcal" />
+      <meta
+        name="keywords"
+        content="Project, React.js, JavaScript, WooCommerce, WordPress, CMS"
+      />
+      <meta
+        name="description"
+        content="Learn more about the individual projects such as key features, lesson learned during development and some screenshots."
+      />
       {isLoaded ? (
         <article className="window">
           {restData ? (

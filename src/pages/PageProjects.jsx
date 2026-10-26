@@ -26,12 +26,18 @@ function PageProjects() {
   }, [restPath, runWithLoading]);
   return (
     <section className="projects-section">
+      <meta name="author" content="Alan Mongcal" />
+      <meta name="keywords" content="Project, React.js, JavaScript, WooCommerce, WordPress, CMS" />
+      <meta
+        name="description"
+        content="Showcases all the projects that I have done from react, wordpress, cms, woocommerce and javascript"
+      />
       <h1 className="page-header">Projects</h1>
       {isLoaded ? (
         <ul className="btn-group">
           <li>
             <button
-              className={filter == "All" ? "active-btn button-53" : "button-53"} 
+              className={filter == "All" ? "active-btn button-53" : "button-53"}
               onClick={() => setFilter("All")}
             >
               All
@@ -42,7 +48,9 @@ function PageProjects() {
                 <li key={index} id={`project-type-${projectType.id}`}>
                   <button
                     className={
-                      filter == projectType.name ? "active-btn button-53" : "button-53"
+                      filter == projectType.name
+                        ? "active-btn button-53"
+                        : "button-53"
                     }
                     onClick={() => setFilter(projectType.name)}
                   >

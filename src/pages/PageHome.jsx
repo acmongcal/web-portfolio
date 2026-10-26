@@ -5,6 +5,15 @@ import Socials from "../components/Socials";
 function PageHome() {
   return (
     <div className="home-container">
+      <meta name="author" content="Alan Mongcal" />
+      <meta
+        name="keywords"
+        content="Home, Tech Stack, Featured Projects"
+      />
+      <meta
+        name="description"
+        content="A little bit of introduction of myself, tech stacks and featured projects."
+      />
       <section className="window">
         <div className="titlebar">
           <h1>Front End Web Developer</h1>
@@ -13,7 +22,7 @@ function PageHome() {
           <article>
             <div className="home-profile">
               <h2>Hi! I'm Alan</h2>
-              <Socials location="home"/>
+              <Socials location="home" />
               <p>
                 Continuing my journey into the web development world. I'm a
                 detail oriented web developer with a 6 year background of
